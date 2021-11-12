@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://use.fontawesome.com/e24ebc4dce.js"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+</head>
+<body>
+    <div class="container" id="Pantalla1">
+          
+        <div class="container text-center"><br><br>
+           <h1>GALLOEXPRE C.A</h1><br><br>
+           <div class="jumbotron">
+            <h1>NUMERO DE CUENTA:                     #6541239875</h1><hr>
+            <h1>SALDO EN LA CUENTA: <h1 id="saldo">$</h1></h1>
+            </div>        
+            <a type="submit" class="btn btn-success" id="botonTransferencia" href="#">Transferir Fondos</a><br>
+            <h1>CUENTAS BANCARIAS:</h1><br>
+            <h1><img src="static/img/bcopichinchalogo.png" alt="logo banco" style="width: 35px; height: 35px">BANCO PICHINCHA</h1><br>    
+        </div>
+        <a type="submit" class="btn btn-success" id="botonCerrarSesion" href="Login.html">Cerrar Sesión</a>
+    </div>
+   
+   
+   
+   <div class="container" id="Pantalla2">
+       
+          <h1>DATOS DEL BENEFICIARIO</h1>
+           <form>
+                 
+                 <div class="">
+                     
+                 </div>
+                 
+                  <div class="form-group">
+                    <label>Número de Cuenta:</label>
+                    <input type="text" class="form-control" id="numerocuenta" aria-describedby="numerocuenta" placeholder="#Numero de Cuenta" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                    <small id="emailHelp" class="form-text text-muted">Número de Cuenta del Beneficiario</small>
+                    <div id="mensaje1" class="alert alert-danger">Campo Requerido</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Entidad Bancaria del Beneficiario:</label>
+                    <select name="bancos" id="bancos" class="form-control form-control-lg">
+                      <option value="Banco Pichincha">BANCO PICHINCHA</option>
+                      <option value="Banco del Pacifico">BANCO DEL PACÍFICO</option>
+                      <option value="Banco de Guayaquil">BANCO DE GUAYAQUIL</option>
+                      <option value="Banco Bolivariano">BANCO BOLIVARIANO</option>
+                      <option value="Banco Internacional">BANCO INTERNACIONAL</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Beneficiario:</label>
+                    <input type="text" class="form-control" id="beneficiario" aria-describedby="nombrebeneficiario" placeholder="Nombre del Beneficiario">
+                    <small id="emailHelp" class="form-text text-muted">Nómbre del Beneficiario</small>
+                    <div id="mensaje2" class="alert alert-danger">Campo Requerido</div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <label >Monto a Transferir:</label>
+                    <input type="number" min="0" step="0.01" class="form-control" id="monto" aria-describedby="numerocuenta" placeholder="00.00$" onchange="setTwoNumberDecimal">
+                    <small id="emailHelp" class="form-text text-muted">Monto a transferir</small>
+                    <div id="mensaje3" class="alert alert-danger">Campo Requerido</div>
+                  </div>
+                  
+                  <a type="submit" class="btn btn-success" id="botontransferir" href="#">REALIZAR TRANSFERENCIA</a>
+            </form>
+            
+            <div class="container text-right">
+                <a type="submit" class="btn btn-success" id="cancelar" href="#">CANCELAR</a>
+            </div>
+            
+            <div id="mensajefondos" class="alert alert-danger text-center">FONDOS INSUFICIENTES</div>
+            
+            
+            <div class="container" id="Aviso">
+               <div class="container text-center" id="popup">
+                   <h1>CONFIRMAR TRANSACCIÓN</h1>
+                   <h3>¿Desea Confirmar La Transacción?</h3><br>
+                   <a type="submit" href="#" class="btn btn-success" id="confirmartransaccion">ACEPTAR</a>
+                   <a type="submit" href="#" class="btn btn-success" id="cancelartransaccion">CANCELAR</a>
+               </div>
+            </div>
+       
+   </div>
+   
+   
+   <div class="container" id="Pantalla3">
+       <div class="container text-center">
+           <img src="static/img/check.png" alt="check" style="width: 100px;height: 100px"><br>
+           <h1>TRANSACCION EXITOSA</h1>
+           <h3>Tu Transferencia ha sido procesada satisfactoriamente</h3>
+       </div>
+       
+       <div class="jumbotron">
+           
+           <h2>VALOR: <h2 id="saldotransferido" step="0.01"></h2></h2><h2>$</h2><br>
+           <h2>COMISION POR TRANSEFERENCIA: <h2 id="comision"></h2><h2>$</h2></h2>
+           <hr>
+           <h2>Desde: 6541239875</h2><br>
+           <h2>Para:</h2> <h2 id="BeneficiarioFinal"></h2><br>
+           <h2>Numero de Cuenta:</h2> <h2 id="NumerodeCuentaFinal"></h2><br>
+           <h2>Entidad Bancaria: </h2> <h2 id="BancoFinal"></h2><br>
+           <hr>
+           <h2>Fecha:</h2> <h2 id="Fecha"></h2><br>
+           <h2>TOTAL: <h2 id="totalfinal"></h2><h2>$</h2></h2>
+       </div>
+       
+        <a type="submit" class="btn btn-success" id="botonAceptar" href="#">ACEPTAR</a>
+   </div>
+   
+   <script src="index.js">
+    </script>
+</body>
+</html>

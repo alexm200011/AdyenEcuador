@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://use.fontawesome.com/e24ebc4dce.js"></script>
+
+    <link rel="stylesheet" href="static/css/login.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    
+</head>
+<body>
+   <div class="modal-dialog text-center">
+       <div class="col-sm-8 main-section">
+          <img src="static/img/logo.jpg" alt="logo" id="logotipo"><br><h2>ECUADOR <img src="static/img/ecuadorlogo.png" alt="ecuadorlogo" style="width: 30px; height: 30px"></h2><br><br><br>
+           <div class="modal-content">
+               <div class="col-12 user-img">
+                   <img src="static/img/avatarlogin.png" alt="avatar">
+               </div>
+               
+               <form class="col-12">
+                   
+                   <div class="form-group" id="user-group">
+                       <input type="text" class="form-control" id="User" placeholder="Usuario">
+                       
+                   </div>
+                   <div class="form-group" id="contrasena-group">
+                       <input type="password" class="form-control" id="Password" placeholder="Contraseña">
+                   </div>
+                   
+                  <a type="submit" class="btn btn-success" id="botonIngresar" href="Index.html"><i class="fa fa-sign-in"></i> Ingresar</a> 
+                  
+                  <div id="mensaje1" class="alert alert-danger">Usuario o Contraseña incorrectos por favor verifique</div>
+               </form>
+           </div>
+       </div>
+   </div>
+   
+   <script src="login.js">
+    </script>
+   
+</body>
+</html>
